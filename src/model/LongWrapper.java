@@ -1,6 +1,9 @@
 package model;
 
 public class LongWrapper {
+
+    private final Object key = new Object();
+
     private long l;
 
     public LongWrapper(long l){
@@ -11,7 +14,9 @@ public class LongWrapper {
         return l;
     }
 
-    public void incrementValue(){
-        l+=1;
+    public void incrementValue() {
+        synchronized (key) {//synchronized added to stop Run Condition since method reads and writes
+            l += 1;
+        }
     }
 }
