@@ -1,5 +1,6 @@
 package model;
 
+//this class will cause a dead lock
 public class A {
     private final Object key1 = new Object();
     private final Object key2 = new Object();

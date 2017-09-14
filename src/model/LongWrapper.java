@@ -1,5 +1,6 @@
 package model;
 
+//this class will cause a race condition
 public class LongWrapper {
 
     private final Object key = new Object();
